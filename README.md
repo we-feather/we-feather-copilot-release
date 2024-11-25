@@ -1,2 +1,4 @@
-# we-feather-copilot-release
-we-feather-copilot-release
+# 微羽助手
+
+微羽助手是一款基于微信公众后台的辅助工具，旨在提高工作效率，减少重复性操作，目前正处于开发的早期阶段。
+如有任何反馈或者建议，请随时联系作者QQ：3966958406
