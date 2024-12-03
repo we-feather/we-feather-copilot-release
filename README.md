@@ -3,6 +3,9 @@
 微羽助手是一款基于微信公众后台的辅助工具，旨在提高工作效率，减少重复性操作，目前正处于开发的早期阶段。
 如有任何反馈或者建议，请随时联系作者QQ：3966958406 微信：featherxfly
 
+## 下载
+[请选择设备型号进行下载](https://github.com/we-feather/we-feather-copilot-release/releases)
+
 ## 目前支持的功能
 ### 公众号管理
 - 支持添加删除公众号
