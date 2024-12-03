@@ -30,6 +30,7 @@
 1. Mac镜像损坏
 <img width="142" alt="iShot_2024-12-03_09 08 02" src="https://github.com/user-attachments/assets/cf3cef51-2cf5-45ce-9964-e30802b357bf">
 打开控制台并输入
+
 ```
 xattr -d com.apple.quarantine /Applications/微羽助手.app
 ```
