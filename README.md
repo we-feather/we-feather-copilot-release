@@ -5,6 +5,7 @@
 
 ## 下载
 [请选择设备型号进行下载](https://github.com/we-feather/we-feather-copilot-release/releases)
+[windows](https://ghp.ci/?q=https%3A%2F%2Fgithub.com%2Fwe-feather%2Fwe-feather-copilot-release%2Freleases%2Fdownload%2Fv0.0.3%2Fwe-feather-copilot-win-x64-0.0.3.exe)
 
 ## 目前支持的功能
 ### 公众号管理
