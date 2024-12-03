@@ -28,7 +28,7 @@
 
 ### 常见问题
 1. Mac镜像损坏
-![](https://github.com/we-feather/we-feather-copilot-release/blob/main/terminal-7d28d65ed3cd98d1fd0189c7873ad0d7.png?raw=true)
+<img width="142" alt="iShot_2024-12-03_09 08 02" src="https://github.com/user-attachments/assets/cf3cef51-2cf5-45ce-9964-e30802b357bf">
 打开控制台并输入
 ```
 xattr -d com.apple.quarantine /Applications/微羽助手.app
