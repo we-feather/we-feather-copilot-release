@@ -4,7 +4,7 @@
 如有任何反馈或者建议，请随时联系作者QQ：3966958406 微信：featherxfly
 
 ## [下载](https://github.com/we-feather/we-feather-copilot-release/releases)
-- [Windows](https://ghp.ci/?q=https%3A%2F%2Fgithub.com%2Fwe-feather%2Fwe-feather-copilot-release%2Freleases%2Fdownload%2Fv0.0.4%2Fwe-feather-copilot-win-x64-0.0.5.exe)
+- [Windows](https://ghp.ci/?q=https%3A%2F%2Fgithub.com%2Fwe-feather%2Fwe-feather-copilot-release%2Freleases%2Fdownload%2Fv0.0.5%2Fwe-feather-copilot-win-x64-0.0.5.exe)
 
 ## 目前支持的功能
 ### 公众号管理
