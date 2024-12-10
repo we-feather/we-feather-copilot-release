@@ -4,12 +4,13 @@
 如有任何反馈或者建议，请随时联系作者QQ：3966958406 微信：featherxfly
 
 ## [下载](https://github.com/we-feather/we-feather-copilot-release/releases)
-- [Windows](https://ghp.ci/?q=https%3A%2F%2Fgithub.com%2Fwe-feather%2Fwe-feather-copilot-release%2Freleases%2Fdownload%2Fv0.0.5%2Fwe-feather-copilot-win-x64-0.0.5.exe)
+- [Windows](https://gh-proxy.com/github.com/we-feather/we-feather-copilot-release/releases/download/v0.0.8/we-feather-copilot-win-x64-0.0.8.exe)
 
 ## 目前支持的功能
 ### 公众号管理
 - 支持添加删除公众号
 - 支持打开多个公众号并缓存当前页面
+- 支持公众号分组管理
 
 ### 草稿箱
 - 支持加载公众号草稿箱
@@ -31,6 +32,8 @@
 - 支持保存到公众号草稿箱
 - 支持源码编辑
 - 支持添加广告
+- 支持添加视频号
+- 支持仅视频模式优化
 
 ### 常见问题
 1. Mac镜像损坏
