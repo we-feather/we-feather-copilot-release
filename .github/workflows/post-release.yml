@@ -1,0 +1,28 @@
+name: 发布后执行脚本
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:  # 添加手动触发支持
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: 安装依赖
+        run: npm install
+        
+      - name: 执行发布脚本
+        run: node post-release.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SERVER_UPDATE_KEY: ${{ secrets.SERVER_UPDATE_KEY }}
