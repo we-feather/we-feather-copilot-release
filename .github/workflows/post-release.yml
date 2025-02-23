@@ -26,3 +26,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SERVER_UPDATE_KEY: ${{ secrets.SERVER_UPDATE_KEY }}
+          SERVER_BASE_URL: ${{ secrets.SERVER_BASE_URL }}
