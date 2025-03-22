@@ -5,6 +5,7 @@ import { load, dump } from 'js-yaml'
 const SERVER_BASE_URL = process.env.SERVER_BASE_URL
 const SERVER_UPDATE_KEY = process.env.SERVER_UPDATE_KEY
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const WECHAT_KEY = process.env.WECHAT_KEY
 
 const octokit = new Octokit({ auth: GITHUB_TOKEN })
 
@@ -43,6 +44,33 @@ async function updateDownloadInfo(filename, data) {
   console.log('----------------------「上报下载信息结束」----------------------')
 }
 
+let isNotifyRoom = false
+async function notifyRoom(version) {
+  if (isNotifyRoom) return
+  console.log('----------------------「通知企微群」----------------------')
+  const downloadUrlMap = {
+    'win-x64': `https://gh-proxy.com/github.com/we-feather/we-feather-copilot-release/releases/download/v${version}/we-feather-copilot-win-x64-${version}.exe`,
+    'mac-x64': `https://gh-proxy.com/github.com/we-feather/we-feather-copilot-release/releases/download/v${version}/we-feather-copilot-mac-x64-${version}.dmg`,
+    'mac-arm64': `https://gh-proxy.com/github.com/we-feather/we-feather-copilot-release/releases/download/v${version}/we-feather-copilot-mac-arm64-${version}.dmg`
+  }
+  await axios.post(
+    'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=' + WECHAT_KEY,
+    {
+      msgtype: "markdown",
+      markdown: {
+        content: `${version}版本正式发布\n \nwindows下载地址: ${downloadUrlMap['win-x64']}\n \nmac-intel芯片下载地址: ${downloadUrlMap['mac-x64']}\n \nmac-m芯片下载地址: ${downloadUrlMap['mac-arm64']}`
+      }
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  )
+  isNotifyRoom = true
+  console.log('----------------------「通知企微群结束」----------------------')
+}
+
 async function publishNotify(filename) {
   const { data: latestReleaseRes } = await octokit.request('/repos/we-feather/we-feather-copilot-release/releases/latest')
   const asset = latestReleaseRes.assets.find((asset) => asset.name === filename)
@@ -57,10 +85,12 @@ async function publishNotify(filename) {
     return file
   })
   data.releaseNotes = releaseNotes
-  // 上报下载信息
-  await updateDownloadInfo(filename, data)
   // 生成版本信息
   await createClientVersion(data.version, data.releaseNotes)
+  // 上报下载信息
+  await updateDownloadInfo(filename, data)
+  // 通知群
+  await notifyRoom(data.version)
 }
 
 async function publishNotifyAll() {
